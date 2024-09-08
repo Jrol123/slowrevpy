@@ -3,11 +3,12 @@ from pedalboard import Pedalboard, Reverb
 from pedalboard.io import get_supported_read_formats
 from math import trunc
 
-def slowedreverb(audio, output: str):
+def slowedreverb(audio, output: str, coefficient: float):
     """
 
     :param audio:
     :param output: Output filename + extension
+    :param coefficient: Speed coefficient
     :return:
 
     """
@@ -24,7 +25,7 @@ def slowedreverb(audio, output: str):
 
     # Slow audio
     print('Slowing audio...')
-    sample_rate -= trunc(sample_rate*0.08)
+    sample_rate -= trunc(sample_rate*coefficient)
 
     # Add reverb
     print('Adding reverb...')
