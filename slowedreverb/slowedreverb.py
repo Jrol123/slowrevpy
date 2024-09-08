@@ -1,12 +1,22 @@
-def slowedreverb(audio, output):
+import soundfile as sf
+from pedalboard import Pedalboard, Reverb
+from pedalboard.io import get_supported_read_formats
+from math import trunc
 
-    if '.wav' not in audio:
-        print('Audio needs to be .wav!')
+def slowedreverb(audio, output: str):
+    """
+
+    :param audio:
+    :param output: Output filename + extension
+    :return:
+
+    """
+    if "." + audio.split(".")[-1] not in get_supported_read_formats():
+        print('Audio needs to be in one of the supported formats:')
+        print(get_supported_read_formats())
         return
 
-    import soundfile as sf
-    from pedalboard import Pedalboard, Reverb
-    from math import trunc
+
 
     # Import audio file
     print('Importing audio...')
