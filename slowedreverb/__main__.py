@@ -1,6 +1,5 @@
 import argparse as prs
 import os.path
-from os.path import basename
 from slowedreverb import slowedreverb
 parser = prs.ArgumentParser(prog="slowedreverb",
                             description="Python module that helps creating slowed and reverbed audio",
@@ -11,10 +10,9 @@ parser.add_argument(metavar="name", nargs='?', dest='output_filename', type=str,
 
 
 def file_processing(filename, speed_coefficient, output_filename: str | None):
-    ext = filename.split('.')[-1]
-    ext = ext if ext != "mp3" else "wav"  # TODO: Is it correct? Or it is better to convert it at "slowedreverb.py" ...
+    ext = "wav"  # TODO: Is it correct? Or it is better to convert it at "slowedreverb.py" ...
     if output_filename is None:
-        output_filename = ".".join(filename.split('.')[:-1]) + ' _slowedreverb.' + ext
+        output_filename = ".".join(filename.split('.')[:-1]) + ' _slowedreverb_' + str(speed_coefficient) + '.' + ext
 
     slowedreverb(filename, output_filename, speed_coefficient)
 
@@ -26,7 +24,7 @@ def dir_processing(dir):
             try:
                 file_processing(os.path.join(dir, item), args.speed_coefficient, None)
             except Exception as e:
-                print("Error: " + str(e))
+                print(f"Error happened while processing file {item}: \n" + str(e))
             finally:
                 print("Done\n")
         else:
