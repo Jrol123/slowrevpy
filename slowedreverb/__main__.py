@@ -5,7 +5,7 @@ parser = prs.ArgumentParser(prog="slowedreverb",
                             description="Python module that helps creating slowed and reverbed audio",
                             epilog='Text at the bottom of help')
 parser.add_argument('audio', type=str, help='destination')
-parser.add_argument(metavar="speed", nargs='?', dest='speed_coefficient', type=float, default=0.08, help='Speed coefficient')
+parser.add_argument(metavar="speed", nargs='?', dest='speed_coefficient', type=float, default=0.65, help='Speed coefficient')
 parser.add_argument(metavar="name", nargs='?', dest='output_filename', type=str, default=None, help='Name of the output file')
 
 
