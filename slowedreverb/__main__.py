@@ -7,6 +7,7 @@ parser = prs.ArgumentParser(prog="slowedreverb",
 parser.add_argument('audio', type=str, help='destination')
 parser.add_argument(metavar="speed", nargs='?', dest='speed_coefficient', type=float, default=0.65, help='Speed coefficient')
 parser.add_argument(metavar="name", nargs='?', dest='output_filename', type=str, default=None, help='Name of the output file')
+# parser.add_argument('-s', dest='silent_mode', help='NoAdditionalInfo')
 
 
 def file_processing(filename, speed_coefficient, output_filename: str | None):
