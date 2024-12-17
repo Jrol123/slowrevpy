@@ -1,5 +1,5 @@
 import soundfile as sf
-import subprocess
+from ffmpeg import FFmpeg
 import os
 from pedalboard import Pedalboard, Reverb, Resample
 from pedalboard.io import get_supported_read_formats, AudioFile
@@ -59,18 +59,15 @@ def slowedreverb(audio, output_filename: str, speed: float):
 
     # Convert to MP3 using ffmpeg
     print("Converting audio to MP3...")
-    subprocess.run(
-        [
-            "ffmpeg",
-            "-i", temp_output,
-            "-vn",
-            "-ar", '44100',
-            "-ac", '2',
-            "-b:a", "192k",
-            output_filename,
-        ],
-        check=True,
+    ffmpeg = (
+        FFmpeg()
+        .option("y")
+        .input(temp_output)
+        .output(output_filename, acodec="libmp3lame", ar="44100", ac=2, ab="192k")
     )
+
+    ffmpeg.execute()
+    # ffmpeg -i '.\07. Re Beautiful Morning _slowedreverb_0.65.wav' -vn -ar 44100 -ac 2 -b:a 192k output.mp3
 
     # Optionally, remove the temporary WAV file
 
