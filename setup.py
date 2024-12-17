@@ -2,15 +2,15 @@ from setuptools import setup, find_packages
 import codecs
 import os
 
-VERSION = '1.3.7'
+VERSION = '1.4.0'
 DESCRIPTION = 'A basic python script to make slowed + reverbs.'
 
 # Setting up
 setup(
     name="slowedreverb",
     version=VERSION,
-    author="JustCow",
-    author_email="<justcow@pm.me>",
+    author="Jrol123",
+    author_email="<angap4@gmail.com>",
     description=DESCRIPTION,
     packages=find_packages(),
     install_requires=['pedalboard', 'soundfile', 'argparse'],
