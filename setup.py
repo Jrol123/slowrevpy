@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import codecs
 import os
 
-VERSION = '1.4.1'
+VERSION = '1.4.1.1'
 DESCRIPTION = 'A basic python script to make slowed + reverbs.'
 
 # Setting up
@@ -13,7 +13,7 @@ setup(
     author_email="<angap4@gmail.com>",
     description=DESCRIPTION,
     packages=find_packages(),
-    install_requires=['pedalboard', 'soundfile', 'argparse'],
+    install_requires=['pedalboard', 'soundfile', 'argparse', 'python-ffmpeg'],
     keywords=['python', 'music', 'slowed reverb', 'Jrol123'],
     classifiers=[
         "Programming Language :: Python :: 3",
