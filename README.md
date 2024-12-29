@@ -1,9 +1,11 @@
 # (Slowed + Reverb)
-Create slowed and reverb songs with python
+Create slowed and reverb songs with python.
+
+Fork of a now unsupported project
 
 **Installation**
 ```
-pip install slowedreverb
+pip install slowrevpy
 ```
 **Dependencies**
 
