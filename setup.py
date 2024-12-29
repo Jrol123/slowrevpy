@@ -9,7 +9,7 @@ if not config.read('conf.ini'):
 
 # Setting up
 setup(
-    name="slowedreverb",
+    name="slowrevpy",
     version=config['build_info']['VERSION'],
     author="Jrol123",
     author_email="<angap4@gmail.com>",
