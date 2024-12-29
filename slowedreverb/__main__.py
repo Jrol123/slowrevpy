@@ -11,6 +11,7 @@ parser.add_argument(metavar="name", nargs='?', dest='output_filename', type=str,
 
 
 def file_processing(filename, speed_coefficient, output_filename: str | None):
+    print(f"Now processing {filename}")
     ext = "mp3"  # По-умолчанию сохраняет в mp3, если не задано своё название
     if output_filename is None:
         output_filename = ".".join(filename.split('.')[:-1]) + ' _slowedreverb_' + str(speed_coefficient) + '.' + ext

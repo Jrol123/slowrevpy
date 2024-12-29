@@ -1,17 +1,19 @@
 from setuptools import setup, find_packages
+from configparser import ConfigParser
 import codecs
 import os
 
-VERSION = '1.4.1.1'
-DESCRIPTION = 'A basic python script to make slowed + reverbs.'
+config = ConfigParser()
+if not config.read('conf.ini'):
+    raise FileNotFoundError("Файл конфигурации 'conf.ini' не найден.")
 
 # Setting up
 setup(
     name="slowedreverb",
-    version=VERSION,
+    version=config['build_info']['VERSION'],
     author="Jrol123",
     author_email="<angap4@gmail.com>",
-    description=DESCRIPTION,
+    description=config['build_info']['DESCRIPTION'],
     packages=find_packages(),
     install_requires=['pedalboard', 'soundfile', 'argparse', 'python-ffmpeg'],
     keywords=['python', 'music', 'slowed reverb', 'Jrol123'],

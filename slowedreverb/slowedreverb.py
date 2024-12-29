@@ -72,6 +72,9 @@ def slowedreverb(audio, output_filename: str, speed: float):
     # Optionally, remove the temporary WAV file
 
     os.remove(temp_output)
+    print("Done!")
+    print()(f"Output file: {output_filename}")
+    print()
 
     # TODO: Это всё поломало
     # with AudioFile(output_filename, 'w', sample_rate_2, effected.shape[0]) as f:

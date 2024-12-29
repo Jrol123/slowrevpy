@@ -1,3 +1,13 @@
+@echo off
+@setlocal enabledelayedexpansion
 pip install build
 python -m build
-pip install dist/slowedreverb-1.4.1.1.tar.gz
+
+for /f "delims=" %%a in ('call read_ini.bat conf.ini build_info VERSION') do (
+    set val=%%a
+)
+echo %val%
+
+set installFile="dist\slowedreverb-!val!.tar.gz"
+
+pip install %installFile%
