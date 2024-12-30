@@ -8,6 +8,6 @@ for /f "delims=" %%a in ('call read_ini.bat conf.ini build_info VERSION') do (
 )
 echo %val%
 
-set installFile="dist\slowedreverb-!val!.tar.gz"
+set installFile="dist\slowrevpy-!val!.tar.gz"
 
 pip install %installFile%

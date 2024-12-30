@@ -7,7 +7,7 @@ from pedalboard.io import get_supported_read_formats, AudioFile
 # https://github.com/asherchok/snr/blob/main/snr-generator.ipynb
 
 
-def slowedreverb(audio, output_filename: str, speed: float):
+def slowrevpy(audio, output_filename: str, speed: float):
     """
 
     :param audio:

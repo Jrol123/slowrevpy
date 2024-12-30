@@ -1,6 +1,6 @@
 import argparse as prs
 import os.path
-from slowedreverb import slowedreverb
+from slowrevpy import slowrevpy
 parser = prs.ArgumentParser(prog="slowedreverb",
                             description="Python module that helps creating slowed and reverbed audio",
                             epilog='Text at the bottom of help')
@@ -16,7 +16,7 @@ def file_processing(filename, speed_coefficient, output_filename: str | None):
     if output_filename is None:
         output_filename = ".".join(filename.split('.')[:-1]) + ' _slowedreverb_' + str(speed_coefficient) + '.' + ext
 
-    slowedreverb(filename, output_filename, speed_coefficient)
+    slowrevpy(filename, output_filename, speed_coefficient)
 
 def dir_processing(dir):
     for item in os.listdir(dir):
