@@ -73,7 +73,7 @@ def slowrevpy(audio, output_filename: str, speed: float):
 
     os.remove(temp_output)
     print("Done!")
-    print()(f"Output file: {output_filename}")
+    print(f"Output file: {output_filename}")
     print()
 
     # TODO: Это всё поломало
