@@ -46,6 +46,7 @@ def slowrevpy(audio: str, ext: str, output_filename: str, speed: float):
     if ext != "wav":
         # Before exporting, convert to MP3 using ffmpeg
         from ffmpeg import FFmpeg
+        # TODO: Нужно сделать систему проверки установки ffmpeg
         
         tmp_dir = "tmp"
         os.makedirs(tmp_dir, exist_ok=True)
