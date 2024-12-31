@@ -1,7 +1,7 @@
 import argparse as prs
 import os.path
 from slowrevpy import slowrevpy
-parser = prs.ArgumentParser(prog="slowedreverb",
+parser = prs.ArgumentParser(prog="slowrevpy",
                             description="Python module that helps creating slowed and reverbed audio",
                             epilog='Text at the bottom of help')
 parser.add_argument('audio', type=str, help='destination')
@@ -12,11 +12,13 @@ parser.add_argument(metavar="name", nargs='?', dest='output_filename', type=str,
 
 def file_processing(filename, speed_coefficient, output_filename: str | None):
     print(f"Now processing {filename}")
-    ext = "mp3"  # По-умолчанию сохраняет в mp3, если не задано своё название
     if output_filename is None:
-        output_filename = ".".join(filename.split('.')[:-1]) + ' _slowedreverb_' + str(speed_coefficient) + '.' + ext
+        ext = "mp3"  # По-умолчанию сохраняет в mp3, если не задано своё название
+        output_filename= ".".join(filename.split('.')[:-1]) + ' _slowedreverb_' + str(speed_coefficient), '.' + ext
+    else:
+        ext = output_filename.split('.')[-1]
 
-    slowrevpy(filename, output_filename, speed_coefficient)
+    slowrevpy(filename, ext, output_filename, speed_coefficient)
 
 def dir_processing(dir):
     for item in os.listdir(dir):
