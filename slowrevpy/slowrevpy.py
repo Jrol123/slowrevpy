@@ -55,7 +55,7 @@ def slowrevpy(audio: str, ext: str, output_filename: str, speed: float):
         sf.write(temp_output, effected, sample_rate_2)
 
         # Convert to MP3 using ffmpeg
-        print("Converting audio to MP3...")
+        print(f"Converting audio to {ext}...")
         ffmpeg = (
             FFmpeg()
             .option("y")
@@ -70,6 +70,5 @@ def slowrevpy(audio: str, ext: str, output_filename: str, speed: float):
     else:
         sf.write(output_filename, effected, sample_rate_2)
     
-    print("Done!")
-    print(f"Output file: {output_filename}")
+    print(f"Done! Output file: {output_filename}")
     print()
