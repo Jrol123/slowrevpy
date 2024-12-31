@@ -6,7 +6,6 @@ python -m build
 for /f "delims=" %%a in ('call read_ini.bat conf.ini build_info VERSION') do (
     set val=%%a
 )
-echo %val%
 
 set installFile="dist\slowrevpy-!val!.tar.gz"
 
