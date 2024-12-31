@@ -10,4 +10,5 @@ pip install slowrevpy
 **Dependencies**
 
 Pedalboard (https://github.com/spotify/pedalboard)
+
 ffmpeg (for the conversion to formats, other that .mp3)
