@@ -1,1 +1,2 @@
 include conf.ini
+include README.md
