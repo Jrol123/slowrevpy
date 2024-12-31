@@ -46,7 +46,7 @@ def slowrevpy(audio: str, ext: str, output_filename: str, speed: float):
     if ext != "wav":
         # Before exporting, convert to MP3 using ffmpeg
         from ffmpeg import FFmpeg
-        # TODO: Сделать определение конвертации в зависимости от формата выходного флага
+        
         tmp_dir = "tmp"
         os.makedirs(tmp_dir, exist_ok=True)
         temp_output = os.path.join(tmp_dir, f"temp_output_{output_filename}.wav")  # Temporary WAV file

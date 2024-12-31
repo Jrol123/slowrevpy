@@ -5,18 +5,22 @@ parser = prs.ArgumentParser(prog="slowrevpy",
                             description="Python module that helps creating slowed and reverbed audio",
                             epilog='Text at the bottom of help')
 parser.add_argument('audio', type=str, help='destination')
-parser.add_argument(metavar="speed", nargs='?', dest='speed_coefficient', type=float, default=0.65, help='Speed coefficient')
-parser.add_argument(metavar="name", nargs='?', dest='output_filename', type=str, default=None, help='Name of the output file')
+parser.add_argument('-s', '--speed', nargs='?', dest='speed_coefficient', type=float, default=0.65, help='Speed coefficient')
+parser.add_argument('-o', '--output', nargs='?', dest='output_filename', type=str, default=None, help='Name of the output file(s)')
+parser.add_argument('-f', '--format', nargs='?', dest='file_format', type=str, default='mp3', help='Format of the output file(s). Applies only when name is none')
 # parser.add_argument('-s', dest='silent_mode', help='NoAdditionalInfo')
 
 
 def file_processing(filename, speed_coefficient, output_filename: str | None):
     print(f"Now processing {filename}")
+    
+    # TODO: Сделать глобальную конвертацию в определённый формат при наличии флага. Сделать систему по типу -f mp3 или -f flac
     if output_filename is None:
         ext = "mp3"  # По-умолчанию сохраняет в mp3, если не задано своё название
-        output_filename= ".".join(filename.split('.')[:-1]) + ' _slowedreverb_' + str(speed_coefficient), '.' + ext
+        output_filename= ".".join(''.join(filename.split('\\')[1:]).split('.')[:-1]) + '_slowedreverb_' + str(speed_coefficient) + '.' + ext
     else:
         ext = output_filename.split('.')[-1]
+    print(f"Track will be build with the {ext} extension in the {output_filename}")
 
     slowrevpy(filename, ext, output_filename, speed_coefficient)
 
