@@ -3,7 +3,7 @@ import os
 from pedalboard import Pedalboard, Reverb, Resample
 # from pedalboard.io import get_supported_read_formats, AudioFile
 
-# https://github.com/asherchok/snr/blob/main/snr-generator.ipynb
+# To check: https://github.com/asherchok/snr/blob/main/snr-generator.ipynb
 
 
 def slowrevpy(audio: str, ext: str, output_filename: str, speed: float) -> None:
