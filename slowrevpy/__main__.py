@@ -3,7 +3,7 @@ import os.path
 from slowrevpy import slowrevpy
 parser = prs.ArgumentParser(prog="slowrevpy",
                             description="Python module that helps creating slowed and reverbed audio",
-                            epilog='Text at the bottom of help')
+                            epilog='For the examples of how to use it check the repository: https://github.com/Jrol123/slowedreverb_main')
 parser.add_argument('audio', type=str, help='destination')
 parser.add_argument('-s', '--speed', nargs='?', dest='speed_coefficient', type=float, default=0.65, help='Speed coefficient')
 parser.add_argument('-o', '--output', nargs='?', dest='output_filename', type=str, default=None, help='Name of the output file(s)')
