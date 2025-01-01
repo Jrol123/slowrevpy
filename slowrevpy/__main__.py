@@ -16,7 +16,7 @@ def file_processing(filename, speed_coefficient, output_filename: str | None, ex
     
     if output_filename is None:
         ext = ext_global  # По-умолчанию сохраняет в mp3, если не задано своё название
-        output_filename= ".".join(''.join(filename.split('\\')[1:]).split('.')[:-1]) + '_slowedreverb_' + str(speed_coefficient) + '.' + ext
+        output_filename= ".".join(filename.split('\\')[-1].split('.')[:-1]) + '_slowedreverb_' + str(speed_coefficient) + '.' + ext
     else:
         ext = output_filename.split('.')[-1]
     print(f"Track will be build with the {ext} extension in the {output_filename}")

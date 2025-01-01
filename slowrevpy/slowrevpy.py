@@ -64,10 +64,14 @@ def slowrevpy(audio: str, ext: str, output_filename: str, speed: float) -> None:
             FFmpeg()
             .option("y")
             .input(temp_output)
-            .output(output_filename, acodec="libmp3lame", ar="44100", ac=2, ab="192k")
+            .output(output_filename, acodec="libmp3lame", ar="44100", ac=2, ab="192k") #! Скорее всего, flac ломается из-за этих параметров
         )
-
-        ffmpeg.execute()
+        
+        try:
+            ffmpeg.execute()
+        except Exception as e:
+            print(f"Error happened while processing {output_filename} at the conversion stage: " + str(e))
+            return
         # ffmpeg -i '.\07. Re Beautiful Morning _slowedreverb_0.65.wav' -vn -ar 44100 -ac 2 -b:a 192k output.mp3
 
         os.remove(temp_output)
