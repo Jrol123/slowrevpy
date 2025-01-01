@@ -14,7 +14,6 @@ parser.add_argument('-f', '--format', nargs='?', dest='file_format', type=str, d
 def file_processing(filename, speed_coefficient, output_filename: str | None, ext_global):
     print(f"Now processing {filename}")
     
-    # TODO: Сделать глобальную конвертацию в определённый формат при наличии флага. Сделать систему по типу -f mp3 или -f flac
     if output_filename is None:
         ext = ext_global  # По-умолчанию сохраняет в mp3, если не задано своё название
         output_filename= ".".join(''.join(filename.split('\\')[1:]).split('.')[:-1]) + '_slowedreverb_' + str(speed_coefficient) + '.' + ext

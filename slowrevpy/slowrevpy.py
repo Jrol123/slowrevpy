@@ -6,13 +6,16 @@ from pedalboard import Pedalboard, Reverb, Resample
 # https://github.com/asherchok/snr/blob/main/snr-generator.ipynb
 
 
-def slowrevpy(audio: str, ext: str, output_filename: str, speed: float):
+def slowrevpy(audio: str, ext: str, output_filename: str, speed: float) -> None:
     """
+    Slows and reverbs audiofiles
 
-    :param audio:
+    :param audio: Input file location
+    :param ext: Extension of the output file
     :param output_filename: Output filename + extension
     :param speed: Speed coefficient
-    :return:
+    
+    :return: Generates slowed and reverbed musical file with the output_filename 
 
     """
 
@@ -44,7 +47,7 @@ def slowrevpy(audio: str, ext: str, output_filename: str, speed: float):
     effected = board(audio, sample_rate)
 
     if ext != "wav":
-        # Before exporting, convert to MP3 using ffmpeg
+        # Before exporting, convert to {ext} using ffmpeg
         from ffmpeg import FFmpeg
         # TODO: Нужно сделать систему проверки установки ffmpeg
         
@@ -55,7 +58,7 @@ def slowrevpy(audio: str, ext: str, output_filename: str, speed: float):
         print("Exporting temp audio as WAV...")
         sf.write(temp_output, effected, sample_rate_2)
 
-        # Convert to MP3 using ffmpeg
+        # Convert to {ext} using ffmpeg
         print(f"Converting audio to {ext}...")
         ffmpeg = (
             FFmpeg()
