@@ -23,25 +23,27 @@ def file_processing(filename, speed_coefficient, output_filename: str | None, ex
 
     slowrevpy(filename, ext, output_filename, speed_coefficient)
 
-def dir_processing(dir):
+def dir_processing(dir, *args):
     for item in os.listdir(dir):
         if os.path.isfile(os.path.join(dir, item)):
             # При впихивании папки output_filename не работает.
             print("Processing: " + item)
             try:
-                file_processing(os.path.join(dir, item), args.speed_coefficient, None, args.file_format)
+                file_processing(os.path.join(dir, item), *args)
             except Exception as e:
                 print(f"Error happened while processing file {item}: \n" + str(e))
             finally:
                 print("Done\n")
         else:
-            dir_processing(os.path.join(dir, item))
+            dir_processing(os.path.join(dir, item), *args)
+            
+def main_processing(audio_path, speed_coefficient, output_filename, file_format):
+    if os.path.isdir(audio_path):
+        dir_processing(audio_path, speed_coefficient, None, file_format)
+    else:
+        file_processing(audio_path, speed_coefficient, output_filename,file_format)
 
 # TODO: Добавить возможность кастомизировать реверберации
 if __name__ == '__main__':
     args = parser.parse_args()
-    if os.path.isdir(args.audio):
-        dir_processing(args.audio)
-    else:
-        file_processing(args.audio, args.speed_coefficient, args.output_filename, args.file_format)
-
+    main_processing(args.audio, args.speed_coefficient, args.output_filename, args.file_format)
