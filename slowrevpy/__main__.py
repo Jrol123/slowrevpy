@@ -29,6 +29,7 @@ def dir_processing(dir, *args):
             # При впихивании папки output_filename не работает.
             print("Processing: " + item)
             try:
+                # TODO: Обрабатывать только муз файлы
                 file_processing(os.path.join(dir, item), *args)
             except Exception as e:
                 print(f"Error happened while processing file {item}: \n" + str(e))
