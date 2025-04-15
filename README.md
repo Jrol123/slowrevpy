@@ -12,7 +12,15 @@ pip install slowrevpy
 
 ## **Dependencies**
 
-For the conversions to formats, other that wav, you would want to install ffmpeg
+### FFmpeg
+For the conversions to formats, other that `.wav`, you would want to install ffmpeg
+
+#### Auto install
+
+You can use autoinstaller from the module, which whill automatically install ffmpeg for your OS.
+When you will start to transform your audio, the module will automatically check if the ffmpeg is installed, and if not, then it will try to autoinstall it.
+
+#### Manial install
 
 For windows:
 
