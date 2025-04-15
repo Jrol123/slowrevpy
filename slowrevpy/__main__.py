@@ -48,13 +48,13 @@ def __file_processing(
     ext_global: str,
 ):
     """
-    Обработка файлов
+    Обработка файлов.
 
     Args:
-        filename (str): Название файла
+        filename (str): Название файла.
         speed_coefficient (float): Коэффициент выходной скорости от исходной.
         output_filename (str | None): Выходное имя файла.
-        ext_global (str): Формат файла
+        ext_global (str): Формат файла.
     """
     print(f"Now processing {filename}")
 
@@ -76,7 +76,7 @@ def __file_processing(
 
 def __dir_processing(dir: str, *args):
     """
-    Обработка папок
+    Обработка папок.
 
     Args:
         dir (str): Путь к папке.
@@ -103,9 +103,9 @@ def main_processing(
     file_format: str = DEFAULT_FILE_FORMAT,
 ) -> None:
     """
-    Обработчик объектов
+    Обработчик объектов.
 
-    Обрабатывает сами музыкальные объекты и находящиеся внутри них файлы
+    Обрабатывает сами музыкальные объекты и находящиеся внутри них файлы.
 
     Args:
         audio_path (str): Путь к файлу или папке.
@@ -114,7 +114,7 @@ def main_processing(
         file_format (str, optional): Формат выходного файла. Defaults to 'wav'.
 
     Returns:
-        None: Сохраняет обработанные файлы рядом с их исходниками.
+        None: Сохраняет замедленные аудиофайлы в корневой папке.
     """
     if os.path.isdir(audio_path):
         __dir_processing(audio_path, speed_coefficient, None, file_format)
