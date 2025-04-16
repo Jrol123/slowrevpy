@@ -36,7 +36,14 @@ sudo apt-get install ffmpeg
 
 ## Usage
 
-It's possible to use this package on files and folders.
+It's possible to use this package as a standalone module on files and folders.
+Also you can import this package and use it as a module for your projects.
+
+## Examples
+
+### Standalone use
+
+Use for converting files/folders from shell:
 
 ```shell
 python -m slowrevpy -f <file-format | default: mp3>  -s <speed-coefficient | default: 0.65> -o <output-filename | works only if you select a single file> <path to audiofile>
