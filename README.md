@@ -46,7 +46,7 @@ Also you can import this package and use it as a module for your projects.
 Use for converting files/folders from shell:
 
 ```shell
-python -m slowrevpy -f <file-format | default: mp3>  -s <speed-coefficient | default: 0.65> -o <output-filename | works only if you select a single file> <path to audiofile>
+slowrevpy -f <file-format | default: mp3>  -s <speed-coefficient | default: 0.65> -o <output-filename | works only if you select a single file> <path to audiofile>
 ```
 
 ## Known problem
