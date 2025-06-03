@@ -122,9 +122,13 @@ def main_processing(
         __file_processing(audio_path, speed_coefficient, output_filename, file_format)
 
 
-# TODO: Добавить возможность кастомизировать реверберации
-if __name__ == "__main__":
+def cli():
     args = parser.parse_args()
     main_processing(
         args.audio, args.speed_coefficient, args.output_filename, args.file_format
     )
+
+
+# TODO: Добавить возможность кастомизировать реверберации
+if __name__ == "__main__":
+    cli()

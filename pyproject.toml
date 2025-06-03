@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.2", "setuptools-scm>=7.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "slowrevpy"
+dynamic = ["version"]
+authors = [{name = "Artemii Popovkin", email = "angap4@gmail.com"}]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+description = "A basic python script to make slowed + reverbs."
+keywords = ["python", "music", "slowed reverb", "Jrol123"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: Unix",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+    "Topic :: Utilities"
+]
+dependencies = [
+    "pedalboard",
+    "soundfile",
+    "argparse",
+    "python-ffmpeg",
+]
+requires-python = ">=3.9"
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[project.urls]
+Homepage = "https://github.com/Jrol123/slowedreverb_main"
+Issues = "https://github.com/Jrol123/slowedreverb_main/issues"
+
+[project.scripts]
+slowrevpy = "slowrevpy.__main__:cli"
+
+[tool.setuptools_scm]
