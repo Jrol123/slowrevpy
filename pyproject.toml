@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "slowrevpy"
-version = "0.0.0"  # Версия из conf.ini
+version = "1.5.2"  # Версия из conf.ini
 description = "A basic python script to make slowed + reverbs."
 authors = ["Artemii Popovkin <angap4@gmail.com>"]
 license = "MIT"
@@ -20,12 +20,12 @@ classifiers = [
     "Operating System :: Microsoft :: Windows",
     "Topic :: Utilities"
 ]
-include = ["conf.ini", "README.md"]
+include = ["README.md"]
 
 [tool.poetry-dynamic-versioning]
 enable = true
 vcs = "git"
-style = "semver"
+pattern = "(?P<base>\\d+(?:\\.\\d+)*)"
 
 [tool.poetry.dependencies]
 python = ">=3.9"

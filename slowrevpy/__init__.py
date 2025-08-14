@@ -5,7 +5,7 @@ config = ConfigParser()
 config.read('conf.ini')
 
 __all__ = ["main_processing"]
-__version__ = "1.5.1"
+__version__ = "1.5.2"
 
 __author__="Artemii Popovkin"
 # GLOBAL_EMAIL=<angap4@gmail.com>
