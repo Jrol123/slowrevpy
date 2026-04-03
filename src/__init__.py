@@ -1,5 +1,5 @@
 from configparser import ConfigParser
-from slowrevpy.__main__ import main_processing
+from src.__main__ import main_processing
 
 config = ConfigParser()
 config.read('conf.ini')

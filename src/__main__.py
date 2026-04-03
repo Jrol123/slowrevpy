@@ -1,6 +1,6 @@
 import argparse as prs
 import os.path
-from .slowrevpy import slowrevpy
+from .slowrevpy.slowrevpy import slowrevpy
 
 DEFAULT_SPEED_COEFFICIENT = 0.65
 DEFAULT_FILE_FORMAT = "mp3"

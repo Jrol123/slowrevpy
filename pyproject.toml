@@ -22,13 +22,17 @@ classifiers = [
 ]
 include = ["README.md"]
 
+[tool.poetry.group.dev.dependencies]
+pyinstaller = "^6.16.0"
+auto-py-to-exe = "^2.48.1"
+
 [tool.poetry-dynamic-versioning]
 enable = true
 vcs = "git"
 pattern = "(?P<base>\\d+(?:\\.\\d+)*)"
 
 [tool.poetry.dependencies]
-python = ">=3.9"
+python = ">=3.9, <3.15"
 pedalboard = "*"
 soundfile = "*"
 python-ffmpeg = "*"
